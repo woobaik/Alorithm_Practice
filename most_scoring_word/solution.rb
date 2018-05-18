@@ -7,3 +7,36 @@
 # If two words score the same, return the word that appears earliest in the original string.
 #
 # All letters will be lowercase and all inputs will be valid.
+
+
+def high(x)
+  highest_word = ""
+  x.split.each do |word|
+    if sum_num(highest_word) < sum_num(word)
+      highest_word = word
+    else
+      highest_word
+    end
+  end
+  highest_word
+end
+
+
+def sum_num(word)
+
+  alph_val = {}
+  alph = ("a".."z").to_a
+
+  alph.each do |chr|
+    alph_val[chr] = alph.find_index(chr)
+  end
+
+  word.split("").reduce(0) {|total, current| total + alph_val[current]}
+
+end
+
+
+
+# ====================================
+
+solution from codewar
