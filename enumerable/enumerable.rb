@@ -27,6 +27,34 @@ module Enumerable
     result
   end
 
+  def my_all?
+    return false if self.length < 1
+    result = []
+    self.my_each do |x|
+      result << x if yield(x)
+    end
+    self == result
+  end
+
+  def my_any?
+    result = []
+    self.my_each do |x|
+      result << x if yield(x)
+    end
+    !(result.empty?)
+  end
+
+  def my_reverse
+    return self if self.length < 2
+    result = []
+    self.each do |x|
+      result.unshift(x)
+    end
+    result
+  end
+
+
+
 
 
 end
@@ -47,3 +75,15 @@ end
 
 # test my_select
 arr2.my_select {|x| x % 2 == 0}
+
+
+#test my_all?
+
+arr2.my_all? {|x| x % 1 == 0}
+
+#test my_any?
+arr2.my_any? {|x| x % 11 == 0}
+
+#my_reverse
+["a","b","c"].my_reverse
+["a"].my_reverse
