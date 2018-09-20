@@ -53,6 +53,16 @@ module Enumerable
     result
   end
 
+  def my_count
+    result = 0
+
+    self.my_each do |i|
+      result += 1
+    end
+    result
+  end
+
+
 
 
 
@@ -87,3 +97,8 @@ arr2.my_any? {|x| x % 11 == 0}
 #my_reverse
 ["a","b","c"].my_reverse
 ["a"].my_reverse
+
+#my count
+["a","b","c"].my_count
+["a"].my_count
+[].my_count
