@@ -70,6 +70,14 @@ module Enumerable
     result.empty?
   end
 
+  def my_map
+    result = []
+    self.my_each do |x|
+      result << x if yield(x)
+    end
+    result
+  end
+
 
 
 
@@ -115,3 +123,6 @@ arr2.my_any? {|x| x % 11 == 0}
 #my_none
 
 arr2.my_none? {|x| x % 10 == 0}
+
+#my_map
+arr2.my_map {|x| x % 3 == 0}
