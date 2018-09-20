@@ -62,6 +62,14 @@ module Enumerable
     result
   end
 
+  def my_none?
+    result = []
+    self.my_each do |x|
+      result << x if yield(x)
+    end
+    result.empty?
+  end
+
 
 
 
@@ -101,4 +109,9 @@ arr2.my_any? {|x| x % 11 == 0}
 #my count
 ["a","b","c"].my_count
 ["a"].my_count
-[].my_count
+[].
+
+
+#my_none
+
+arr2.my_none? {|x| x % 10 == 0}
