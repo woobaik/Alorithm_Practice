@@ -13,3 +13,13 @@ def palindrome(str)
       false
     end
 end
+
+def z_counter(n)
+  if n == 0
+    puts "nomore bottles of beer on the wall"
+    return true
+  else
+    puts "#{n} bottles of beer on the wall"
+    z_counter(n-1)
+  end
+end
