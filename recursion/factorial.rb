@@ -23,3 +23,16 @@ def z_counter(n)
     z_counter(n-1)
   end
 end
+
+
+def flatten(arrs)
+  result = []
+  arrs.each do |arr|
+    if arr.length == 1
+      result << arr
+    else
+      flatten(arr)
+    end
+  end
+  result
+end
