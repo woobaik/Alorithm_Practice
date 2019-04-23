@@ -1,38 +1,54 @@
 class Node {
   constructor(value) {
-    this.value = value
-    this.left= null
-    this.right = null
+    this.value = value;
+    this.left = null;
+    this.right = null;
   }
 }
 
-class binarySearch {
+class Bsearch {
   constructor() {
-    this.root = null
-    this.length = 0
+    this.root = null;
   }
+  
   insert(value) {
     const newNode = new Node(value)
     
-    if (this.length === 0) {
-      this.root = newNode 
+    if (this.root === null) {
+      this.root = newNode
       return this
     }
-    let currentNode = this.root;
     
+    let currentNode = this.root
     while (true) {
-      if (value < currentNode) {
-        if (!currentNode.left) {
-          currentNode.left = value
+      if (value < currentNode.value) {
+        
+        if (!(currentNode.left)) {
+          currentNode.left = newNode;
           return this
+        } else {
+          currentNode = currentNode.left
+        }
+      } else {
+        
+        if (!(currentNode.right)) {
+          currentNode.right = newNode;
+          return this
+        } else {
+          currentNode = currentNode.right;
         }
       }
-      currentNode = currentNode.left
     }
-        
+    return this
   }
-}
+  
+};
 
-const hao = new binarySearch()
-hao.insert(21)
-hao.insert(3)
+const tree = new Bsearch()
+tree.insert(1)
+tree.insert(2)
+tree.insert(3)
+tree.insert(0)
+tree.insert(-1)
+console.log(tree)
+
