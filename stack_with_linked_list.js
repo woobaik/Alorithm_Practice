@@ -24,7 +24,7 @@ class Stack {
     if (this.length === 0) {
       this.top = newNode;
       this.bottom = newNode;
-      this.length += 1
+      this.length += 1ㅁ
       return this
     }
     this.top.next = newNode
