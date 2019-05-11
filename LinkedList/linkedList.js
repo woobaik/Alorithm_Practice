@@ -61,6 +61,7 @@ class Linked {
     delete(index) {
         if (index < 1) {
             this.head = this.head.next
+            this.length -= 1
             return this
         }
         const lead = this.traverse(index - 1);
@@ -72,6 +73,32 @@ class Linked {
         return this
     }
 
+    print() {
+        const result = [];
+        let currentNode = this.head
+        for (let i = 0; i < this.length; i++) {
+            result.push(currentNode.value)
+            currentNode = currentNode.next
+        }
+        return result
+    }
+
+    reverse() {
+        let currentNode = this.head;
+        let nextNode = currentNode.next;
+
+        this.tail = this.head;
+        while (nextNode) {
+            let followingNode = nextNode.next
+            nextNode.next = currentNode;
+            currentNode = nextNode;
+            nextNode = followingNode
+        }
+
+        this.head = currentNode;
+        this.tail.next = null
+        return this
+    }
 }
 
 
@@ -81,7 +108,7 @@ class Linked {
 
 
 const myLink = new Linked('first');
-myLink.append('second');
-myLink.prepend('zero');
-myLink.insert(1, 'negative')
-myLink.delete(0)
+myLink.append('secod')
+myLink.reverse()
+myLink.print()
+
