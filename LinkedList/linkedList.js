@@ -102,9 +102,6 @@ class Linked {
 }
 
 
-// index => 0 , return head, 
-// index => 1, return head.next
-// index => 2, return head.next.next
 
 
 const myLink = new Linked('first');
@@ -112,3 +109,4 @@ myLink.append('secod')
 myLink.reverse()
 myLink.print()
 
+d
