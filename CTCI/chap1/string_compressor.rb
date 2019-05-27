@@ -20,8 +20,8 @@ def str_comp(str)
     end
     i += 1
   end  
-  return result
+  str.length < result.length ? str : result
 end
 
 
-str_comp('aaccbbaa')
+str_comp('abslkfjslkdjf')
