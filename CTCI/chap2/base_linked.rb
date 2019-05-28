@@ -30,7 +30,15 @@ class Linked_list
   end
 
   def insert(value,index)
-
+    new_node = Node.new(value)
+    if index == 0 
+      new_node.next = self.head
+      self.head = new_node
+    end
+    lead = self.traverse(index - 1)
+    following = lead.next 
+    lead.next = new_node
+    new_node.next = following 
   end
   
   def traverse(idx)
@@ -66,4 +74,5 @@ list = Linked_list.new('apple')
 list.append('pear')
 list.append('chicken')
 list.prepend('juntal')
-list.traverse(3)
+list.insert('il',3)
+list.print
