@@ -16,4 +16,3 @@ end
 
 n = gets.to_i
 
-staircase n
