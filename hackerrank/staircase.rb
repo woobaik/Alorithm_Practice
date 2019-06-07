@@ -15,4 +15,3 @@ def staircase(n)
 end
 
 n = gets.to_i
-
