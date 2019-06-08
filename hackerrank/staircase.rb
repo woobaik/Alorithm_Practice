@@ -13,5 +13,3 @@ def staircase(n)
         i -= 1 
     end
 end
-
-n = gets.to_i
