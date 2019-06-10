@@ -14,4 +14,4 @@ end
 
 arr = gets.rstrip.split(' ').map(&:to_i)
 
-miniMaxSum arr
+
