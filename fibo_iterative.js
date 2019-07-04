@@ -1,5 +1,3 @@
-//[0,1,1,2,3,5,8,13]
-
 function fib(num) {
     const result = [0, 1]
     if (num <= 1) {
