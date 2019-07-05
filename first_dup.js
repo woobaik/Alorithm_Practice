@@ -13,4 +13,3 @@ function dup(arr) {
 
 const arr1 = [1,2,1,2,4];
 
-dup(arr1)
