@@ -14,7 +14,3 @@ function insertionSort(arr) {
     return arr
 }
 
-arr1 = [1];
-arr2 = [1, 2, 4, 8, 2, 4, 6, 123, 3, 7, 9];
-
-insertionSort(arr2);
