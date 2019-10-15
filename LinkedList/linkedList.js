@@ -68,6 +68,28 @@ class LinkedList {
     newNode.next = nextNode
     this.length += 1
   }
+
+  remove(index) {
+    if (index < 1) {
+      this.head = this.head.next
+      this.length -= 1
+      return this
+    }
+
+    if (index > this.length - 1) {
+      const prev = this.traverse(this.length - 2)
+      prev.next = null
+      this.tail = prev
+      this.length -= 1
+      return this
+    }
+
+    const prevNode = this.traverse(index - 1)
+    const targetNode = prevNode.next
+    const newTarget = targetNode.next
+    prevNode.next = newTarget
+    this.length -= 1
+  }
 }
 
 const newList = new LinkedList(1)
@@ -78,4 +100,7 @@ newList.insert(1, 4)
 newList.insert(4, 4)
 newList.insert(1, 8)
 newList.insert(0, 1)
+newList.remove(0)
+newList.remove(6)
+newList.remove(2)
 newList.showArray()
