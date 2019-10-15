@@ -90,6 +90,21 @@ class LinkedList {
     prevNode.next = newTarget
     this.length -= 1
   }
+
+  reverse() {
+    let first = this.head
+    this.tail = this.head
+    let second = first.next
+    while (second) {
+      let temp = second.next
+      second.next = first
+      first = second
+      second = temp
+    }
+    this.head.next = null
+    this.head = first
+    return this.showArray()
+  }
 }
 
 const newList = new LinkedList(1)
@@ -104,3 +119,4 @@ newList.remove(0)
 newList.remove(6)
 newList.remove(2)
 newList.showArray()
+newList.reverse()
