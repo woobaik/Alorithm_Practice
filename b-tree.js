@@ -38,9 +38,30 @@ class BinarySearchTree {
     return this
   }
   lookup(value) {
-    //Code here
+    let currentNode = this.root
+    if (!currentNode) {
+      return false
+    }
+
+    while (currentNode) {
+      if (currentNode.value === value) {
+        return currentNode
+      }
+      if (currentNode.value > value) {
+        if (currentNode.left) {
+          currentNode = currentNode.left
+        } else {
+          return false
+        }
+      } else {
+        if (currentNode.right) {
+          currentNode = currentNode.right
+        } else {
+          return false
+        }
+      }
+    }
   }
-  // remove
 }
 
 const tree = new BinarySearchTree()
@@ -51,8 +72,9 @@ tree.insert(20)
 tree.insert(170)
 tree.insert(15)
 tree.insert(1)
-JSON.stringify(traverse(tree.root))
 
+JSON.stringify(traverse(tree.root))
+tree.lookup(4)
 //     9
 //  4     20
 //1  6  15  170
