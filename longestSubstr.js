@@ -1,19 +1,19 @@
-const lngestSub = arr => {
-  const hashMap = {}
-  let maxLength = 0
-  let windowStart = 0
+arr = "abccdaq".split("")
 
+const longest = arr => {
+  hashMap = {}
+  let start = 0
+  let maxLeng = 1
   for (let i = 0; i < arr.length; i++) {
-    const endChar = arr[i]
-    if (hashMap[endChar] >= windowStart) {
-      windowStart = hashMap[endChar] + 1
+    if (hashMap[arr[i]]) {
+      start = hashMap[arr[i]] + 1
     }
-    hashMap[endChar] = i
 
-    maxLength = i - windowStart + 1
+    hashMap[arr[i]] = i
+    maxLeng = Math.max(maxLeng, i - start + 1)
   }
-  return maxLength
+
+  return maxLeng
 }
 
-const arr = ["a", "b", "a", "c", "d", "e", "f"]
-lngestSub(arr)
+longest(arr)
