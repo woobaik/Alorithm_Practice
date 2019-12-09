@@ -1,4 +1,5 @@
-var twoSum = function(nums, target) {
+var twoSum = function(nums, targe
+    t) {
   const result = {}
   for (let i = 0; i < nums.length; i++) {
     if (result[target - i]) {
