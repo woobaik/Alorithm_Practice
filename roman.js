@@ -9,20 +9,24 @@ const roman = roman => {
     M: 1000
   }
   const arr = roman.split("")
-  let totalNumber = digit[arr[0]]
-  for (let i = 1; i < arr.length; i++) {
-    let currentLetter = digit[arr[i]]
-    let previousLetter = digit[arr[i - 1]]
+  let total = 0
+  for (let i = 0; i < arr.length; i++) {
+    let current = digit[arr[i]]
+    let next = digit[arr[i + 1]]
 
-    if (currentLetter > previousLetter) {
-      // IV => V > I
-      totalNumber += currentLetter - previousLetter
+    if (current < next) {
+      console.log(current, next)
+      total += next - current
+      i += 1
+    } else if (next === undefined) {
+      total += current
     } else {
-      totalNumber += currentLetter
+      total += current + next
+      i += 1
     }
   }
 
-  return totalNumber
+  return total
 }
 
-roman("IV")
+roman("MCXV")
