@@ -19,5 +19,3 @@ function maxChar(str) {
     return maxKey
 
 }
-
-maxChar('11');
