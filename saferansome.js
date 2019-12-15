@@ -24,5 +24,3 @@ const ransome = (sentence, magazine) => {
 
   return result
 }
-
-ransome("apple is red red", "apple is blue but red")
