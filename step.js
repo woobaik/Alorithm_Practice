@@ -11,3 +11,5 @@ function step(num) {
     console.log(result)
   }
 }
+
+step(4)
