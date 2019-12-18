@@ -17,5 +17,3 @@ const prime = num => {
   }
   return result
 }
-
-prime(20)
