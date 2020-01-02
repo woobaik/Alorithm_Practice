@@ -17,12 +17,21 @@ class Queue {
   }
 }
 
-const que = new Queue()
-que.add("1")
-console.log(que)
-que.add("2")
-console.log(que)
-que.remove()
-console.log(que, "")
+const weave = (first, second) => {
+  const result = []
 
-que.peek()
+  while (first.peek() && second.peek()) {
+    result.push(first.remove())
+    result.push(second.remove())
+  }
+
+  if (first.peek()) {
+    while (first.peek() !== undefined) {
+      result.push(first.remove())
+    }
+  } else {
+    while (second.peek() !== undefined) {
+      result.push(second.remove())
+    }
+  }
+}
