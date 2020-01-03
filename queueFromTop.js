@@ -22,4 +22,19 @@ class Queue {
       this.first.push(this.second.pop())
     }
   }
+
+  peek() {
+    while (this.first.peek()) {
+      const record = this.first.pop()
+      this.second.push(record)
+    }
+
+    const result = this.second.peek()
+
+    while (this.second.peek()) {
+      this.first.push(this.second.pop())
+    }
+
+    return result
+  }
 }
